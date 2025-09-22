@@ -132,10 +132,8 @@ $('document').ready(function(){
 	});
 
 	$('#light_candle').click(function(){
-		// Replace cake image with cake129.png and show candle flames
+		// Replace cake image with cake129.png (without extra candle flames)
 		$('.cake-png').attr('src', 'cake129.png');
-		$('.velas').fadeIn('slow');
-		$('.fuego').fadeIn('slow');
 		$(this).fadeOut('slow').promise().done(function(){
 			$('#wish_message').fadeIn('slow');
 		});
