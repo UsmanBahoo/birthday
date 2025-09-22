@@ -125,13 +125,15 @@ $('document').ready(function(){
 	});	
 
 	$('#cake_fadein').click(function(){
-		$('.cake').fadeIn('slow');
+		$('.cake-png').fadeIn('slow');
 		$(this).fadeOut('slow').delay(3000).promise().done(function(){
 			$('#light_candle').fadeIn('slow');
 		});
 	});
 
 	$('#light_candle').click(function(){
+		// Show candle flames over the PNG cake image
+		$('.velas').fadeIn('slow');
 		$('.fuego').fadeIn('slow');
 		$(this).fadeOut('slow').promise().done(function(){
 			$('#wish_message').fadeIn('slow');
