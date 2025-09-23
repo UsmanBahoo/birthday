@@ -6,10 +6,13 @@ body {
 	-o-transition:background-color linear 5s;
 	-ms-transition:background-color linear 5s;
 	transition:background-color linear 5s;
-	overflow-x:hidden;
+	overflow: hidden;
+	height: 100vh;
 }
 .container {
 	display: none;
+	max-height: 100vh;
+	overflow: hidden;
 }
 .peach {
 	background-color: #FFDAB9;
@@ -1268,17 +1271,20 @@ audio {
 	margin-top: 50px;
 }
 .message {
-	margin-top: 200px;
+	margin-top: 20px;
 	display: none;
+	max-height: 400px;
+	overflow: hidden;
 }
 .message p {
 	font-family: 'Signika', sans-serif;
-	font-size: 30px;
+	font-size: 24px;
 	text-transform: uppercase;
 	color: #C4515C;
 	text-shadow: 2px 2px 2px #FFF;
 	display: none;
 	font-weight: bold;
+	margin: 5px 0;
 }
 
 .btn-primary {
