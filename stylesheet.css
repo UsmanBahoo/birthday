@@ -6,13 +6,18 @@ body {
 	-o-transition:background-color linear 5s;
 	-ms-transition:background-color linear 5s;
 	transition:background-color linear 5s;
-	overflow: hidden;
+	overflow-x: hidden;
 	height: 100vh;
+	width: 100%;
+	margin: 0;
+	padding: 0;
 }
 .container {
 	display: none;
 	max-height: 100vh;
-	overflow: hidden;
+	overflow-x: hidden;
+	width: 100%;
+	margin: 0 auto;
 }
 .peach {
 	background-color: #FFDAB9;
@@ -973,12 +978,12 @@ audio {
 
 .bannar {
 	max-width: 100%;
+	height: auto;
 	-webkit-transform:translate(0px,-500px);
 	-moz-transform:translate(0px,-500px);
 	-o-transform:translate(0px,-500px);
 	-ms-transform:translate(0px,-500px);
 	transform:translate(0px,-500px);
-
 }
 .bannar-come {
 	-webkit-animation: bannar_come linear 6s;
@@ -1059,7 +1064,7 @@ audio {
 	100% {
 		-ms-transform:translate(0px,0px);
 	}
-}o
+}
 @keyframes bannar_come {
 	0%{
 		transform:translate(0px,-1000px);
@@ -1314,3 +1319,360 @@ audio {
     		-webkit-transform: scale(0.9);
     	}
     }*/
+
+/* ========================================
+   RESPONSIVE MEDIA QUERIES
+   ======================================== */
+
+/* Extra Small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+    body {
+        font-size: 14px;
+        overflow-x: hidden;
+    }
+    
+    .container {
+        padding: 0 10px;
+        max-width: 100%;
+    }
+    
+    .balloons {
+        width: 60px;
+        height: 110px;
+        background-size: 60px 110px;
+    }
+    
+    .balloons h2 {
+        font-size: 25px;
+        margin-top: 15px;
+    }
+    
+    .bulb {
+        width: 30px;
+        height: 30px;
+        background-size: 30px 30px;
+    }
+    
+    .bulb-holder {
+        height: 50px;
+    }
+    
+    .bannar {
+        max-width: 95%;
+        height: auto;
+    }
+    
+    .message p {
+        font-size: 16px;
+        margin: 3px 0;
+        line-height: 1.4;
+    }
+    
+    .cake-cover {
+        margin-top: 20px;
+    }
+    
+    .cake-png {
+        width: 120px !important;
+    }
+    
+    /* Balloons positioning for small screens */
+    #b1 { left: 5%; }
+    #b2 { left: 15%; }
+    #b3 { left: 25%; }
+    #b4 { left: 35%; }
+    #b5 { left: 45%; }
+    #b6 { left: 55%; }
+    #b7 { left: 65%; }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    body {
+        font-size: 15px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .balloons {
+        width: 70px;
+        height: 128px;
+        background-size: 70px 128px;
+    }
+    
+    .balloons h2 {
+        font-size: 30px;
+        margin-top: 20px;
+    }
+    
+    .bulb {
+        width: 35px;
+        height: 35px;
+        background-size: 35px 35px;
+    }
+    
+    .bulb-holder {
+        height: 55px;
+    }
+    
+    .bannar {
+        max-width: 98%;
+    }
+    
+    .message p {
+        font-size: 18px;
+        margin: 4px 0;
+        line-height: 1.5;
+    }
+    
+    .cake-cover {
+        margin-top: 30px;
+    }
+    
+    .cake-png {
+        width: 150px !important;
+    }
+    
+    /* Balloons positioning for small screens */
+    #b1 { left: 8%; }
+    #b2 { left: 18%; }
+    #b3 { left: 28%; }
+    #b4 { left: 38%; }
+    #b5 { left: 48%; }
+    #b6 { left: 58%; }
+    #b7 { left: 68%; }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    body {
+        font-size: 16px;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+    
+    .balloons {
+        width: 80px;
+        height: 146px;
+        background-size: 80px 146px;
+    }
+    
+    .balloons h2 {
+        font-size: 35px;
+        margin-top: 25px;
+    }
+    
+    .bulb {
+        width: 40px;
+        height: 40px;
+        background-size: 40px 40px;
+    }
+    
+    .bulb-holder {
+        height: 60px;
+    }
+    
+    .bannar {
+        max-width: 100%;
+    }
+    
+    .message p {
+        font-size: 20px;
+        margin: 4px 0;
+        line-height: 1.6;
+    }
+    
+    .cake-cover {
+        margin-top: 40px;
+    }
+    
+    .cake-png {
+        width: 170px !important;
+    }
+    
+    /* Balloons positioning for medium screens */
+    #b1 { left: 10%; }
+    #b2 { left: 20%; }
+    #b3 { left: 30%; }
+    #b4 { left: 40%; }
+    #b5 { left: 50%; }
+    #b6 { left: 60%; }
+    #b7 { left: 70%; }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    body {
+        font-size: 17px;
+    }
+    
+    .container {
+        padding: 0 25px;
+    }
+    
+    .balloons {
+        width: 90px;
+        height: 164px;
+        background-size: 90px 164px;
+    }
+    
+    .balloons h2 {
+        font-size: 40px;
+        margin-top: 30px;
+    }
+    
+    .bulb {
+        width: 45px;
+        height: 45px;
+        background-size: 45px 45px;
+    }
+    
+    .bulb-holder {
+        height: 65px;
+    }
+    
+    .message p {
+        font-size: 22px;
+        margin: 5px 0;
+        line-height: 1.7;
+    }
+    
+    .cake-cover {
+        margin-top: 45px;
+    }
+    
+    .cake-png {
+        width: 190px !important;
+    }
+    
+    /* Balloons positioning for large screens */
+    #b1 { left: 12%; }
+    #b2 { left: 22%; }
+    #b3 { left: 32%; }
+    #b4 { left: 42%; }
+    #b5 { left: 52%; }
+    #b6 { left: 62%; }
+    #b7 { left: 72%; }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    body {
+        font-size: 18px;
+    }
+    
+    .container {
+        max-width: 1140px;
+        padding: 0 30px;
+    }
+    
+    .balloons {
+        width: 100px;
+        height: 183px;
+        background-size: 100px 183px;
+    }
+    
+    .balloons h2 {
+        font-size: 50px;
+        margin-top: 35px;
+    }
+    
+    .bulb {
+        width: 50px;
+        height: 50px;
+        background-size: 50px 50px;
+    }
+    
+    .bulb-holder {
+        height: 70px;
+    }
+    
+    .message p {
+        font-size: 24px;
+        margin: 5px 0;
+        line-height: 1.8;
+    }
+    
+    .cake-cover {
+        margin-top: 50px;
+    }
+    
+    .cake-png {
+        width: 200px !important;
+    }
+    
+    /* Balloons positioning for extra large screens */
+    #b1 { left: 15%; }
+    #b2 { left: 25%; }
+    #b3 { left: 35%; }
+    #b4 { left: 45%; }
+    #b5 { left: 55%; }
+    #b6 { left: 65%; }
+    #b7 { left: 75%; }
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 991.98px) {
+    .container {
+        overflow-x: hidden;
+    }
+    
+    body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    
+    .balloon-border {
+        width: 100% !important;
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+/* Portrait orientation adjustments */
+@media (orientation: portrait) and (max-width: 767.98px) {
+    .message {
+        max-height: 300px;
+        overflow-y: auto;
+        padding: 10px;
+    }
+    
+    .balloons h2 {
+        font-size: 20px;
+    }
+    
+    .cake-cover {
+        margin-top: 15px;
+    }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (orientation: landscape) and (max-height: 500px) {
+    .balloons {
+        width: 50px;
+        height: 91px;
+        background-size: 50px 91px;
+    }
+    
+    .balloons h2 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    
+    .message p {
+        font-size: 14px;
+        margin: 2px 0;
+    }
+    
+    .cake-cover {
+        margin-top: 10px;
+    }
+    
+    .cake-png {
+        width: 100px !important;
+    }
+}
