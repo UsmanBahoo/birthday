@@ -1086,7 +1086,8 @@ audio {
 .balloons {
 	position: fixed;
 	bottom: -200px;
-	opacity: 0.6;
+	opacity: 0;
+	display: none;
 	z-index: 99;
 	width: 100px;
 	height: 183px;
@@ -1701,6 +1702,17 @@ audio {
         margin-top: 10px;
     }
     
+    .balloons {
+        width: 60px;
+        height: 110px;
+        background-size: 60px 110px;
+    }
+    
+    .balloons h2 {
+        font-size: 25px;
+        margin-top: 5px;
+    }
+    
     .message p {
         font-size: 14px;
         margin: 2px 0;
@@ -1713,4 +1725,57 @@ audio {
     .cake-png {
         width: 100px !important;
     }
+
+/* Additional responsive styles for balloons */
+@media (max-width: 480px) {
+    .balloons {
+        width: 45px;
+        height: 82px;
+        background-size: 45px 82px;
+    }
+    
+    .balloons h2 {
+        font-size: 18px;
+        margin-top: 3px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .balloons {
+        width: 70px;
+        height: 128px;
+        background-size: 70px 128px;
+    }
+    
+    .balloons h2 {
+        font-size: 30px;
+        margin-top: 8px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .balloons {
+        width: 90px;
+        height: 165px;
+        background-size: 90px 165px;
+    }
+    
+    .balloons h2 {
+        font-size: 40px;
+        margin-top: 12px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .balloons {
+        width: 100px;
+        height: 183px;
+        background-size: 100px 183px;
+    }
+    
+    .balloons h2 {
+        font-size: 50px;
+        margin-top: 15px;
+    }
+}
 }

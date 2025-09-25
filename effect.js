@@ -3,18 +3,37 @@ $(window).load(function(){
 	$('.container').fadeIn('fast');
 });
 $('document').ready(function(){
-		var vw;
-		$(window).resize(function(){
-			 vw = $(window).width()/2;
-			$('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
-			$('#b11').animate({top:240, left: vw-350},500);
-			$('#b22').animate({top:240, left: vw-250},500);
-			$('#b33').animate({top:240, left: vw-150},500);
-			$('#b44').animate({top:240, left: vw-50},500);
-			$('#b55').animate({top:240, left: vw+50},500);
-			$('#b66').animate({top:240, left: vw+150},500);
-			$('#b77').animate({top:240, left: vw+250},500);
-		});
+	var vw;
+	$(window).resize(function(){
+		// Only reposition if balloons are visible (after wish_message click)
+		if ($('#b11').length > 0) {
+			vw = $(window).width();
+			var spacing, startPos;
+			
+			// Responsive spacing based on screen size
+			if (vw <= 480) {
+				spacing = 50;
+				startPos = vw/2 - 150;
+			} else if (vw <= 768) {
+				spacing = 70;
+				startPos = vw/2 - 210;
+			} else if (vw <= 1024) {
+				spacing = 90;
+				startPos = vw/2 - 270;
+			} else {
+				spacing = 100;
+				startPos = vw/2 - 300;
+			}
+			
+			$('#b11,#b22,#b33,#b44,#b55,#b66').stop();
+			$('#b11').animate({top:240, left: startPos},500);
+			$('#b22').animate({top:240, left: startPos + spacing},500);
+			$('#b33').animate({top:240, left: startPos + spacing * 2},500);
+			$('#b44').animate({top:240, left: startPos + spacing * 3},500);
+			$('#b55').animate({top:240, left: startPos + spacing * 4},500);
+			$('#b66').animate({top:240, left: startPos + spacing * 5},500);
+		}
+	});
 
 	$('#turn_on').click(function(){
 		$('#bulb_yellow').addClass('bulb-glow-yellow');
@@ -104,20 +123,7 @@ $('document').ready(function(){
 
 	$('#balloons_flying').click(function(){
 		$('.balloon-border').animate({top:-500},8000);
-		$('#b1,#b4,#b5,#b7').addClass('balloons-rotate-behaviour-one');
-		$('#b2,#b3,#b6').addClass('balloons-rotate-behaviour-two');
-		// $('#b3').addClass('balloons-rotate-behaviour-two');
-		// $('#b4').addClass('balloons-rotate-behaviour-one');
-		// $('#b5').addClass('balloons-rotate-behaviour-one');
-		// $('#b6').addClass('balloons-rotate-behaviour-two');
-		// $('#b7').addClass('balloons-rotate-behaviour-one');
-		loopOne();
-		loopTwo();
-		loopThree();
-		loopFour();
-		loopFive();
-		loopSix();
-		loopSeven();
+		// Don't show balloons here anymore - they will show on wish_message click
 		
 		$(this).fadeOut('slow').delay(5000).promise().done(function(){
 			$('#cake_fadein').fadeIn('slow');
@@ -141,25 +147,50 @@ $('document').ready(function(){
 
 		
 	$('#wish_message').click(function(){
-		 vw = $(window).width()/2;
-
+		// First show the balloons
+		$('.balloons').show().css('opacity', '0.9');
+		
+		// Calculate responsive positioning
+		var vw = $(window).width();
+		var spacing, startPos;
+		
+		// Responsive spacing based on screen size
+		if (vw <= 480) {
+			spacing = 50;
+			startPos = vw/2 - 150;
+		} else if (vw <= 768) {
+			spacing = 70;
+			startPos = vw/2 - 210;
+		} else if (vw <= 1024) {
+			spacing = 90;
+			startPos = vw/2 - 270;
+		} else {
+			spacing = 100;
+			startPos = vw/2 - 300;
+		}
+		
+		// Stop any ongoing animations
 		$('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
+		
+		// Change IDs and animate to spell SALIHA
 		$('#b1').attr('id','b11');
-		$('#b2').attr('id','b22')
-		$('#b3').attr('id','b33')
-		$('#b4').attr('id','b44')
-		$('#b5').attr('id','b55')
-		$('#b6').attr('id','b66')
-		$('#b7').attr('id','b77')
-		$('#b11').animate({top:240, left: vw-350},500);
-		$('#b22').animate({top:240, left: vw-250},500);
-		$('#b33').animate({top:240, left: vw-150},500);
-		$('#b44').animate({top:240, left: vw-50},500);
-		$('#b55').animate({top:240, left: vw+50},500);
-		$('#b66').animate({top:240, left: vw+150},500);
-		$('#b77').animate({top:240, left: vw+250},500);
-		$('.balloons').css('opacity','0.9');
+		$('#b2').attr('id','b22');
+		$('#b3').attr('id','b33');
+		$('#b4').attr('id','b44');
+		$('#b5').attr('id','b55');
+		$('#b6').attr('id','b66');
+		
+		// Animate balloons to spell SALIHA responsively
+		$('#b11').animate({top: 240, left: startPos}, 500);                    // S
+		$('#b22').animate({top: 240, left: startPos + spacing}, 500);          // A
+		$('#b33').animate({top: 240, left: startPos + spacing * 2}, 500);      // L
+		$('#b44').animate({top: 240, left: startPos + spacing * 3}, 500);      // I
+		$('#b55').animate({top: 240, left: startPos + spacing * 4}, 500);      // H
+		$('#b66').animate({top: 240, left: startPos + spacing * 5}, 500);      // A
+
+		// Fade in the letters
 		$('.balloons h2').fadeIn(3000);
+		
 		$(this).fadeOut('slow').delay(3000).promise().done(function(){
 			$('#story').fadeIn('slow');
 		});
